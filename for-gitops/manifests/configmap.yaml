@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: todo-backend-cfm
+data:
+  USERNAME: 'postgres'
+  HOST: 'postgres-svc.default:5432'
+  DATABASE: 'postgres'
+  URLIMAGE: 'http://localhost:3004'

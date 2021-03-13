@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: todo-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: todo-backend-svc
+          servicePort: 80
+      # - path: /todos
+      #   backend:
+      #     serviceName: todo-backend-svc
+      #     servicePort: 1234

@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - controller.yaml   # SealedSecrets
+  - sealedsecret.yaml
+  - persistentvolume.yaml 
+  - persistentvolumeclaim.yaml
+  - statefulset.yaml  # postgres-db
+  - configmap.yaml
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+images:
+- name: FETCH-IMAGE
+  newName: georgemihail/image-fetch-health
+  newTag: latest
+- name: TODO-IMAGE
+  newName: georgemihail/todo-static-healthcheck
+  newTag: latest
